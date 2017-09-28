@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{% block title %} Add Restaurants || {{block.super}}{% endblock %}
+
+{%block content%}
+<h2>Add a Restaurant</h2>
+{%if forms.errors%}
+  {{ forms.errors }}
+{%endif%}
+<form method="post"> {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn btn-success btn-small" type="Submit">
+    <span class="glyphicon glyphicon-ok"></span> Save</button>
+</form>
+{%endblock content%}

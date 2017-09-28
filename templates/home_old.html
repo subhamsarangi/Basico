@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{% block title %} Welcome || {{block.super}}{% endblock %}
+
+{%block content%}
+<p>This stuff is rendered => <strong>{{ html_var }}</strong></p>
+<p>This stuff is rendered verbatim=> <code>{%verbatim%}{{ html_var }}{%endverbatim%}</code></p>
+
+{%if num is not None %}
+  <h2>{{ num }}</h2>
+{% endif %}
+
+<h6>SQUARED NUMBERS</h6>
+<p>
+{% for item in squares%}
+  {{ item }}
+  {% if item|divisibleby:"2" %}
+    Numero pari
+  {% endif %}
+{% endfor%}
+</p>
+
+{%endblock content%}

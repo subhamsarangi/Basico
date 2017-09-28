@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}La Vivanda</title>
+    {% include 'snippets/css.html'%}
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="alert">
+    <h1><i>  This is </i>Allfood</h1>
+        <h3>Organize your Choices</h3>
+      {% include 'snippets/nav.html'%}
+    </div>
+
+    <div class="container">
+      {%block content%} {%endblock content%}
+    </div>
+
+    <footer>
+      <h5>fonts used in this site are</h5>
+          <button type="button" class="btn btn-xs"><span class="badge">1</span> Playfair Display</button>
+          <button type="button" class="btn btn-xs"><span class="badge">2</span> Glouceter MT</button>
+          <button type="button" class="btn btn-xs"><span class="badge">3</span> Meslo LG S</button>
+          <button type="button" class="btn btn-xs"><span class="badge">4</span> Roboto</button>
+          <button type="button" class="btn btn-xs"><span class="badge">5</span> Georgia</button>
+    </footer>
+  {% include 'snippets/js.html'%}
+  </body>
+</html>

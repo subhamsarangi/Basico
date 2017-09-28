@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+{% block title %} Restaurants || {{block.super}}{% endblock %}
+
+{%block content%}
+<h2><span class="high_d"><span class="glyphicon glyphicon-cutlery"></span> {{object.title}}</span></h2>
+<h3><small>{{object.category}}</small></h3>
+<p><span class="glyphicon glyphicon-globe"></span><b> Location:</b> <a href="https://www.google.com/maps/search/{{object.location}}" target="_blank">{{object.location}}</a></p>
+<p><span class="glyphicon glyphicon-hourglass"></span> {{object.timestamp}} (updated {{object.updated|timesince}} ago)</p>
+
+{%endblock content%}
