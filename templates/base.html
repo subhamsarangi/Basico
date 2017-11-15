@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}{% endblock %}La Vivanda</title>
+    <title>{% block title %}{% endblock %}Memory Frame</title>
     {% include 'snippets/css.html'%}
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div class="alert">
-    <h1><i>  This is </i>Allfood</h1>
+    <h1><i>  This is </i><a href='{% url "home"%}'>MemoryFrame</a></h1>
         <h3>Organize your Choices</h3>
       {% include 'snippets/nav.html'%}
     </div>

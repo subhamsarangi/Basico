@@ -51,7 +51,7 @@ body::before{
 .alert h1 {
   /*all-caps with a underline*/
   font-family: playfair display;
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding-bottom: 3px;
   text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.09);
   font-size: 72px;
@@ -59,6 +59,12 @@ body::before{
   margin:5px 10px;
   font-weight: bold;
   border-bottom: 2px solid #222;
+}
+.alert>h1>a {
+  color: #59047a;
+}
+.alert>h1>a:hover{
+  text-decoration: none;
 }
 .alert>h1>i {
   text-transform: none;
@@ -95,8 +101,9 @@ nav a:hover{
 
 .container h2 {
   font-family: roboto light;
- font-size: 48px;
+  font-size: 46px;
   margin: 20px;
+  word-wrap: break-word;
   text-transform: capitalize;
 }
 
@@ -104,6 +111,46 @@ nav a:hover{
   margin-bottom: 20px;
 }
 
+.hashcircle {
+  font-size: 32px;
+  display: inline-block;
+  width: 45px;
+  float: left;
+  background: #222;
+  color: #1effef;
+  margin: 0 3px;
+  padding: 3px;
+  height: 45px;
+  border: 2px solid #222;
+  border-radius: 50%;
+}
+.site_list {
+  border: 5px solid #000;
+  display: inline-block;
+  margin: 0 auto;
+  padding-bottom: 16px;
+  background: rgba(0,0,0,0.8);
+  border-radius: 5px;
+}
+.site_list:hover{
+  box-shadow: inset 4px 4px 3px rgba(0,0,0,0.4),
+  inset -4px -4px 3px rgba(0,0,0,0.4);
+}
+.site_list a {
+  font-family: open sans;
+  color: #1effef;
+  display: list-item;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  font-size: 26px;
+  float: left;
+}
+.site_list a:hover {
+  text-decoration: none;
+  color: #fff;
+
+}
 .table-bordered>thead>tr>th {
 background:#bbb;
     font-family:roboto;
