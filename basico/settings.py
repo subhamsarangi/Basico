@@ -25,7 +25,7 @@ SECRET_KEY = 'fcp)8z*qfs=z=^^1xunq$7nm^kmx9bryy=42h27yx+!jd6($5q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [webresearch.pythonanywhere.com]
 
 
 # Application definition
