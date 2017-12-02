@@ -2,7 +2,6 @@ from django.conf.urls import url
 from . import views
 from django.views.generic import TemplateView
 
-
 urlpatterns = [
     url(r'^list/$', views.RestaurantListView.as_view(), name='list'),
     url(r'^create/$', views.RestaurantCreateView.as_view(),name='create'),

@@ -1,13 +1,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% load static %}
 <style>
-{% load static%}
 html {
   height: 100%;/*code for footer*/
 }
 body {
-  text-align: center;
-  position: relative;/*code for footer*/
+text-align: center;
+position: relative;/*code for footer*/
  margin: 0;/*code for footer*/
+ padding: 0;
  padding-bottom: 12rem;/*code for footer*/
  min-height: 100%;/*code for footer*/
 }
@@ -25,17 +26,18 @@ body::before{
     background-size:cover;
     background-attachment: scroll;
     background-repeat:no-repeat;
-    background-color: #ececec;
+    background-color: rgba(0, 0, 0, 0.2);
     position: fixed;
 }
-.rowhome{
+.alert {
   display: block;
-  background: #ECF0F1;
-  padding: 10px 20px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.13),-2px 2px 4px rgba(0, 0, 0, 0.13);
+  margin:0 auto;
+  padding: 0;
 }
 .high {
   background:#fde3a7;
+  color: #222;
+  font-family: monospace;
 }
 .high_d {
   border: 2px dashed rgba(102, 51, 153,0.4);
@@ -46,25 +48,29 @@ body::before{
   background:#663399;
   padding: 4px 6px;
   color: #fff;
+  font-family: playfair display;
   line-height: 1.609em;
 }
 .alert h1 {
   /*all-caps with a underline*/
-  font-family: playfair display;
-  text-transform: capitalize;
-  padding-bottom: 3px;
   text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.09);
   font-size: 72px;
   letter-spacing: 2px;
-  margin:5px 10px;
+  margin:0px;
   font-weight: bold;
-  border-bottom: 2px solid #222;
 }
 .alert>h1>a {
-  color: #59047a;
+    color: #fff;
+    vertical-align: middle;
+    padding: 0px 10px;
+    border-radius: 0 0 15px 15px;
+    background: rgba(102, 51, 153, 0.8);
+    font-family: playfair display;
+    text-transform: capitalize;
 }
 .alert>h1>a:hover{
   text-decoration: none;
+  background: rgba(102, 51, 153, 0.7);
 }
 .alert>h1>i {
   text-transform: none;
@@ -73,19 +79,19 @@ body::before{
 .alert h3 {
   /*italic with capitalized words*/
   font-family: georgia;
-  font-style: italic;
   font-size: 36px;
+  color: #fff;
+  text-shadow: 3px 2px 2px #222;
   text-transform: capitalize;
   padding-bottom: 5px;
 }
-.alert {
-  margin-bottom: 0;
-}
 
 nav a{
-  color: #000;
+  background: rgba(0, 0, 0, 0.7);
+  color: #aeffef;
   padding: 4px 6px;
-  font-family: roboto condensed;text-transform:uppercase;
+  font-family: roboto condensed;
+  text-transform:uppercase;
   font-size: 18px;
   border: 2px solid rgba(0, 0, 0, 0);
 }
@@ -93,24 +99,47 @@ nav a{
 nav a:hover{
   text-decoration: none;
   border-radius: 5px;
-  color: #000;
-  border: 2px solid rgba(0, 0, 0, .8);
-  background: rgba(0, 0, 0, 0.08);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, .8);
+  background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 2px 2px rgba(0,0,0,.18);
 }
-
+.container {
+  display: block;
+  margin:0 auto;
+  padding: 0;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: open sans;
+}
 .container h2 {
   font-family: roboto light;
   font-size: 46px;
+  text-shadow: 2px 3px 5px #000;
   margin: 20px;
   word-wrap: break-word;
   text-transform: capitalize;
 }
-
-.container {
-  margin-bottom: 20px;
+.container h3{
+  display: block;
+  font-family: open sans;
+  color: #00ab6b;
+  margin:5px;
+  font-size: 32px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5);
 }
-
+.rowhome{
+  display: block;
+  background: #ECF0F1;
+  padding: 20px;
+  box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.13),
+  -2px 2px 4px rgba(255, 255, 255, 0.13);
+}
+.features {
+  color: #000;
+  font-family: open sans;
+}
 .hashcircle {
   font-size: 32px;
   display: inline-block;
@@ -162,14 +191,15 @@ background:#bbb;
 }
 .table-bordered>tbody>tr>td {
     font-size: 16px;
-    font-family: georgia;
+    font-family: open sans;
+    background: #fff;
     text-transform: capitalize;
     line-height: 1.609em;
     text-align: center;
     vertical-align: middle;
   }
-.table-bordered>tbody>tr>td:first-child {
-  font-family: sans-serif;
+.table-bordered>tbody>tr>td:nth-child(2){
+  color: #000;
 }
 .table-bordered>tbody>tr>td:nth-child(3)>a, .container h3 small {
   background:#1E824C;
@@ -205,10 +235,17 @@ background:#bbb;
     right: 0px;/*code for footer*/
     height: 100px;
     margin-bottom: 0px;/*code for footer*/
+    padding: 4px;
   }
 @media only screen and (max-width: 480px){
-  .alert h1 {
-    font-size: 48px;
+  body::before {
+    background-image: url("{% static 'images/foodbg_m.jpg' %}");
+  }
+  .alert h1{
+    font-size: 35px;
+  }
+  .alert h3{
+    font-size: 24px;
   }
   .table-bordered>thead>tr>th {
     font-size: 16px;
@@ -217,8 +254,14 @@ background:#bbb;
   .table-bordered>tbody>tr>td {
     font-size: 14px;
   }
-  .container h2 {
-    font-size: 32px;
+  .container h2,.container h3, .alert h3 {
+    font-size: 22px;
+  }
+  .rowhome h1 {
+    font-size: 20px;
+  }
+  nav a{
+    font-size: 12px;
   }
 }
 </style>
